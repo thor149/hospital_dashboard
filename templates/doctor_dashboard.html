@@ -1,0 +1,33 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user_name }}!</h1>
+
+    {% if user_type == "Doctor" %}
+        <h2>Doctor Information</h2>
+        <p>Name: {{ first_name }} {{ last_name }}</p>
+        <p>Email: {{ email }}</p>
+        <p>Address: {{ address_line1 }}, {{ city }}, {{ state }} - {{ pincode }}</p>
+        <!-- Add more doctor-specific information as needed -->
+    {% elif user_type == "Patient" %}
+        <h2>Patient Information</h2>
+        <p>Name: {{ first_name }} {{ last_name }}</p>
+        <p>Email: {{ email }}</p>
+        <p>Address: {{ address_line1 }}, {{ city }}, {{ state }} - {{ pincode }}</p>
+        <!-- Add more patient-specific information as needed -->
+    {% else %}
+        <p>Invalid user type</p>
+    {% endif %}
+
+    <!-- Common Information for both Doctor and Patient -->
+
+    <!-- Add more common information as needed -->
+
+    <a href="#">Logout</a>
+</body>
+</html>
